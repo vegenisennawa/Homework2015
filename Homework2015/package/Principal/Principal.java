@@ -18,8 +18,8 @@ public class Principal
 		
 		//Clase para pruebas
 		int mb = 1024 * 1024; 
-		long tiempoInicial, tiempoFinal, tiempoTotal;
-		int multiplicador = 9922, n=10000, dato, i, j;
+		long tiempoInicial, tiempoFinal, tiempoTotal, tiempoPromedio = 0;
+		int multiplicador = 9922, n=10000, dato, eliminar, i, j;
 		int noDatos = n*(n+1)/2;
 		int[] datos;
 		
@@ -51,8 +51,53 @@ public class Principal
 		tiempoTotal = tiempoFinal - tiempoInicial;
 		System.out.print("Tiempo total en milisegundos: " + tiempoTotal + "\n");*/
 		
+		//Segunda prueba: chain representation
+		System.out.print("Prueba: chain representation \n");
+		//Se crea la lista
+		tiempoInicial = System.currentTimeMillis(); 
+		System.out.print("Se crea la lista \n");
+		AverageTimeChainArray chain = new AverageTimeChainArray(); 
+		tiempoFinal = System.currentTimeMillis(); 
+		tiempoTotal = tiempoFinal - tiempoInicial;
+		System.out.print("Tiempo total en milisegundos: " + tiempoTotal + "\n");
+		
+		System.out.println();
+		
+		System.out.print("Se agregan elementos a la lista \n");
+		//Se agregan n elementos a la lista
+		for(int index=0; index<n; index++)
+		{
+			dato = (int)(Math.random()*10); 
+			tiempoInicial = System.currentTimeMillis(); 
+			chain.add(index, dato);
+			tiempoFinal = System.currentTimeMillis(); 
+			tiempoTotal = tiempoFinal - tiempoInicial;
+			System.out.print("Tiempo total en milisegundos en en indice: "+index+" y dato: "+ dato +": "+ tiempoTotal + "\n");
+			tiempoPromedio = tiempoPromedio + tiempoTotal;
+		}
+		
+		System.out.println();
+		
+		System.out.print("Se eliminan elementos de la lista \n");
+		//Se remueven elementos
+		//Si n es 1 o 10, se mantiene ese número
+		//Si no, se divide entre 10
+		if(n > 10)
+		{
+			n = n/10;
+		}
+		for(int index=0; index<n; index++)
+		{
+			eliminar = (int)(Math.random()*10); 
+			tiempoInicial = System.currentTimeMillis(); 
+			dato = chain.remove(eliminar);
+			tiempoFinal = System.currentTimeMillis(); 
+			tiempoTotal = tiempoFinal - tiempoInicial;
+			System.out.print("Tiempo total en milisegundos en en indice: "+eliminar+" y dato: "+ dato +": "+ tiempoTotal + "\n");
+		}
+		
 		//Tercera prueba: matriz triangular inferior
-		System.out.print("Prueba: matriz triangular inferior \n");
+		/*System.out.print("Prueba: matriz triangular inferior \n");
 		System.out.print("Longitud de prueba: " + n + "\n");
 		System.out.print("Se inicializa la matriz\n");
 		tiempoInicial = System.currentTimeMillis(); 
@@ -115,6 +160,6 @@ public class Principal
 		matriz.output();
 		tiempoFinal = System.currentTimeMillis(); 
 		tiempoTotal = tiempoFinal - tiempoInicial;
-		System.out.println("Tiempo total en milisegundos: " + tiempoTotal + "\n");
+		System.out.println("Tiempo total en milisegundos: " + tiempoTotal + "\n");*/
 	}
 }

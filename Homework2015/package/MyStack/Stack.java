@@ -1,9 +1,9 @@
 package MyStack;
 
-public interface Stack<Item>
+public interface Stack
 {
 	public boolean empty( );
-	public Item peek( ) ;
-	public void push (Item TheObject);
-	public Item pop( );
+	public int peek( ) ;
+	public void push (int TheObject);
+	public int pop( );
 }

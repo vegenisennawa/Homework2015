@@ -6,53 +6,40 @@
 
 package Principal; 
 import java.lang.String;
-import MyString.RecString;
+
 import Principal.Matrix;
 import Principal.AverageTimeChainArray;
+import MyStack.MyScratchStack;;
 
 
 public class Principal
 {
-	public static void main(String [] args)
+	/*public static void main(String [] args)
 	{
 		
 		//Clase para pruebas
-		int mb = 1024 * 1024; 
-		long tiempoInicial, tiempoFinal, tiempoTotal, tiempoPromedio = 0;
+		
+		
 		int multiplicador = 9922, n=10000, dato, eliminar, i, j;
 		int noDatos = n*(n+1)/2;
 		int[] datos;
 		
-		System.out.println("***** Clase para pruebas de java *****\n");
 		
-		System.out.println("Versión de java utilizado: " + System.getProperty("java.runtime.version"));
-	
-		Runtime instance = Runtime.getRuntime();
- 
-		System.out.println("**** Estadísticas de la utilización del Heap (MB) ****\n");
- 
-		System.out.println("Memoria disponible: " + instance.totalMemory() / mb);
-		System.out.println("Memoria libre: " + instance.freeMemory() / mb);
-		System.out.println("Memoria usada: " + (instance.totalMemory() - instance.freeMemory()) / mb);
-		System.out.println("Memoria máxima disponible: " + instance.maxMemory() / mb);
+		
+		
 		
 		//Primera prueba: recursión de la cadena
 		
-		/*System.out.print("Prueba: StrLen \n");
-		StringBuilder sb = new StringBuilder("a");
-		for (int i = 0; i < multiplicador-1; i++) {
-		     sb.append("a");
-		}
-		String cadena = sb.toString();
-		System.out.print("Cadena de prueba: " + cadena + "\n");
-		tiempoInicial = System.currentTimeMillis(); 
-		System.out.print("Resultado de prueba: " + RecString.StrLen(0,cadena) + "\n");
-		tiempoFinal = System.currentTimeMillis(); 
-		tiempoTotal = tiempoFinal - tiempoInicial;
+		/*
+		
+		
+		 
+		
+		
 		System.out.print("Tiempo total en milisegundos: " + tiempoTotal + "\n");*/
 		
 		//Segunda prueba: chain representation
-		System.out.print("Prueba: chain representation \n");
+		/*System.out.print("Prueba: chain representation \n");
 		//Se crea la lista
 		tiempoInicial = System.currentTimeMillis(); 
 		System.out.print("Se crea la lista \n");
@@ -94,7 +81,7 @@ public class Principal
 			tiempoFinal = System.currentTimeMillis(); 
 			tiempoTotal = tiempoFinal - tiempoInicial;
 			System.out.print("Tiempo total en milisegundos en en indice: "+eliminar+" y dato: "+ dato +": "+ tiempoTotal + "\n");
-		}
+		}*/
 		
 		//Tercera prueba: matriz triangular inferior
 		/*System.out.print("Prueba: matriz triangular inferior \n");
@@ -161,5 +148,21 @@ public class Principal
 		tiempoFinal = System.currentTimeMillis(); 
 		tiempoTotal = tiempoFinal - tiempoInicial;
 		System.out.println("Tiempo total en milisegundos: " + tiempoTotal + "\n");*/
-	}
+		
+		//Cuarta prueba: Pila
+		
+		/*MyScratchStack pila = new MyScratchStack();
+		
+		pila.push(1);
+		pila.push(2);
+		pila.push(3);
+		
+		System.out.println("Pila peek "+pila.peek());
+		System.out.println("Pila pop "+pila.pop());
+		System.out.println("Pila peek "+pila.peek());
+		System.out.println("Pila pop "+pila.pop());
+		System.out.println("Pila peek "+pila.peek());
+		System.out.println("Pila pop "+pila.pop());
+		System.out.println("Pila peek "+pila.peek());
+	}*/
 }

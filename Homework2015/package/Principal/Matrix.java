@@ -11,35 +11,26 @@ public class Matrix
 	//Se inicializa la matriz con el valor que el usuario le proporcione
 	public Matrix(int n)
 	{
-		Matriz = new int[n][n];
+		Matriz = new int[n][];
 		
 		for(int i=0; i<n; i++)
 		{
-			for(int j=0; j<n; j++)
-			{
-				Matriz[i][j] = 0;
-			}
+			Matriz[i]= new int [i+1];
 		}
 	}
 	
 	public void add(int i, int j, int valor)
 	{
 		//Se debe comprobar cada tamaño
-		if((i>=0 && i<Matriz.length) && (j>=0 && j<Matriz.length))
+		if((i>=0 && i<Matriz.length) && (j>=0 && j<Matriz[i].length))
 		{
-			if(i>=j)
-			{
-				if(valor != -1 && valor != 0)
-				{
-					Matriz[i][j] = valor;
-				}
-			}
+			Matriz[i][j] = valor;
 		}
 	}
 	
 	public int get(int i, int j)
 	{
-		if((i>=0 && i<Matriz.length) && (j>=0 && j<Matriz.length))
+		if((i>=0 && i<Matriz.length) && (j>=0 && j<Matriz[i].length))
 		{
 			return Matriz[i][j];
 		}
@@ -49,7 +40,7 @@ public class Matrix
 	
 	public int remove(int i, int j)
 	{
-		if((i>=0 && i<Matriz.length) && (j>=0 && j<Matriz.length))
+		if((i>=0 && i<Matriz.length) && (j>=0 && j<Matriz[i].length))
 		{
 			int retorno = get(i, j);
 			add(i, j, 0);
@@ -65,7 +56,14 @@ public class Matrix
 		{
 			for(int j=0; j<Matriz.length; j++)
 			{
-				System.out.print(Matriz[i][j] + " ");
+				if(j<=i)
+				{
+					System.out.print(Matriz[i][j] + " ");
+				}
+				else
+				{
+					System.out.print(0 + " ");
+				}
 			}
 			
 			System.out.println();

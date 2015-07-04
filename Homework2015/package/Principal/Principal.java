@@ -20,7 +20,7 @@ public class Principal
 		//Clase para pruebas
 		
 		
-		int multiplicador = 9922, n=10000, dato, eliminar, i, j;
+		int multiplicador = 9922, n=10000, dato, eliminar, 
 		int noDatos = n*(n+1)/2;
 		int[] datos;
 		

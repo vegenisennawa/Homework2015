@@ -18,13 +18,11 @@ public class MyScratchStack implements Stack
 		Superior = null;
 	}
 
-	@Override
-	public boolean empty() {
-		// TODO Auto-generated method stub
+	public boolean empty() 
+	{
 		return (this.Superior == null);
 	}
 
-	@Override
 	public int peek() {
 		
 		if(empty())
@@ -38,7 +36,6 @@ public class MyScratchStack implements Stack
 		
 	}
 
-	@Override
 	public void push(int TheObject) {
 		
 		Nodo nuevoNodo = new Nodo();
@@ -66,7 +63,6 @@ public class MyScratchStack implements Stack
 		{
 			int valorSacado = Superior.valor;
 			Superior = Superior.inferior;
-			//System.out.print("pop sig "+Superior.inferior);
 			return valorSacado;
 		}
 		

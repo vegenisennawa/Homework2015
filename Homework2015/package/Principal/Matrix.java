@@ -35,7 +35,7 @@ public class Matrix
 			return Matriz[i][j];
 		}
 		else
-			return -1;
+			return 0;
 	}
 	
 	public int remove(int i, int j)
@@ -47,7 +47,7 @@ public class Matrix
 			return retorno;
 		}
 		else
-			return -1;
+			return 0;
 	}
 	
 	public void output()
